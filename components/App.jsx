@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import GameBoard from './gameBoard'
+import GameBoard from './GameBoard'
 
 const App = () => {
 

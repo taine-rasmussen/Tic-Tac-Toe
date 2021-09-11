@@ -1,11 +1,14 @@
 import React from 'react';
 
+// Components
+import GameBoard from './gameBoard'
+
 const App = () => {
 
 
     return (
         <div>
-            <h1>Working</h1>
+            <GameBoard />
         </div>
     )
 }

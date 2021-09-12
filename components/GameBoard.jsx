@@ -4,19 +4,35 @@ const GameBoard = () => {
 
 
     const [move, setMove] = useState(null)
-    const [input, setInput] = useState(null)
+    const [move2, setMove2] = useState(null)
 
-    const playerMoves = [['X'], ['Y']]
+    // Cell inputs
+    const [input1, setInput1] = useState(null)
+    const [input2, setInput2] = useState(null)
+    const [input3, setInput3] = useState(null)
 
-    const cycleMove = () => {
+
+    const cell1 = () => {
+
+        // Input1
         if (move % 2 === 0){
-            setInput('X'), setMove(move + 1)
+            setInput1('X'), setMove(move + 1)
         }   else {
-            setInput('Y'), setMove(move + 1)
+            setInput1('Y'), setMove(move + 1)
         }
     }
 
-    console.log(move)
+    const cell2 = () => {
+          // Input2
+          if (move2 % 2 === 0){
+            setInput2('X'), setMove2(move2 + 1)
+        }   else {
+            setInput2('Y'), setMove2(move2 + 1)
+        }
+    }
+
+    console.log('move1:', move)
+    console.log('move2:', move2)
 
     // Each cell needs to be independent so when state is func can check current state of single cell and updated as needed.
     
@@ -29,25 +45,18 @@ const GameBoard = () => {
 
 
 
-
-
-
-
-
-    // Its really great that you are coding more and more but lets think about how we can optimize the time to be even better. I love you 
-
     return(
         <div className="gameBoard">
             <div className="gameBoard-container">
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
-                <div className="gameBoard-cell" onClick={cycleMove}><h1 className='cell-text'>{input}</h1></div>
+                <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>
+                <div className="gameBoard-cell" onClick={cell2}><h1 className='cell-text'>{input2}</h1></div>
+                <div className="gameBoard-cell" onClick={cell3}><h1 className='cell-text'>{input3}</h1></div>
+                <div className="gameBoard-cell" onClick={cell4}><h1 className='cell-text'>{input4}</h1></div>
+                <div className="gameBoard-cell" onClick={cell5}><h1 className='cell-text'>{input5}</h1></div>
+                <div className="gameBoard-cell" onClick={cell6}><h1 className='cell-text'>{input6}</h1></div>
+                <div className="gameBoard-cell" onClick={cell7}><h1 className='cell-text'>{input7}</h1></div>
+                <div className="gameBoard-cell" onClick={cell8}><h1 className='cell-text'>{input8}</h1></div>
+                <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
         </div>
     )

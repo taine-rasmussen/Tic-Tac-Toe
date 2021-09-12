@@ -5,6 +5,8 @@ const GameBoard = () => {
     // Cell state used to keep track moves
     const [move, setMove] = useState(null)
 
+    const [clock, setClock] = useState('Start')
+
     // Tracks player moves
     const [tracker, setTracker] = useState([[''],[''],[''],
                                             [''],[''],[''],
@@ -99,7 +101,7 @@ const GameBoard = () => {
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <label>Start</label>
+                <label className='game-clock'>{clock}</label>
             </div>
             <div className="gameBoard-container">
                 <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>

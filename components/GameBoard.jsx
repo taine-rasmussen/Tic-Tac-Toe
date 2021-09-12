@@ -97,6 +97,10 @@ const GameBoard = () => {
     // Try storing possible win conditions as arrays and check if playerTracker matches 
     return(
         <div className="gameBoard">
+            <div className="header-container">
+                <h1>Tic-Tac-Toe</h1>
+                <label>Start</label>
+            </div>
             <div className="gameBoard-container">
                 <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>
                 <div className="gameBoard-cell" onClick={cell2}><h1 className='cell-text'>{input2}</h1></div>

@@ -28,6 +28,13 @@ const GameBoard = () => {
 
     // Cell onClick func that handles player selecting a cell
     const cell1 = () => {
+
+        if(gameClock === 0){
+            gameClock()
+        } else {
+             null
+        }
+
         if (move % 2 === 0){
             setInput1('X'), setMove(move + 1), setTracker(tracker[0] = 'X')
         }   else {
@@ -91,6 +98,46 @@ const GameBoard = () => {
         }
     }
 
+
+    let min = 0;
+    let sec = 0;
+    // Handles game clock counting up
+    const gameClock = function() {
+
+     
+
+        setInterval(function() {
+          document.getElementById("timer").innerHTML = min + " : " + sec;
+          sec++;
+            if (sec == 0) {
+                min ++;
+                sec = 60;
+                if (min == 0) {
+                min = 5;
+                }
+            }
+        }, 1000);
+      }
+
+      // Handles reset btn
+      const Reset = () => {
+
+        // Reset time back to Start string
+        document.getElementById("timer").innerHTML = 'Start'
+        min = 0
+        sec = 0;
+
+        // Resets move counter
+        setMove(null)
+        
+        // Resets cells to null state
+        setInput1(null)
+
+
+
+
+      }
+
     console.log('move:', move)
     console.log('Player moves:', tracker[0])
     // Things to figure out:
@@ -101,8 +148,14 @@ const GameBoard = () => {
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <label className='game-clock'>{clock}</label>
             </div>
+
+            <div>
+                <label className='game-clock' id='timer' onClick={gameClock}>Start</label>
+                <button onClick={Reset}>Reset</button>
+            </div>
+
+
             <div className="gameBoard-container">
                 <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>
                 <div className="gameBoard-cell" onClick={cell2}><h1 className='cell-text'>{input2}</h1></div>

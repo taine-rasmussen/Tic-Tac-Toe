@@ -91,6 +91,25 @@ const GameBoard = () => {
         }
     }
 
+    // Handles game clock counting up
+    const gameClock = function() {
+
+        let minute = 0;
+        let sec = 0;
+
+        setInterval(function() {
+          document.getElementById("timer").innerHTML = minute + " : " + sec;
+          sec++;
+            if (sec == 0) {
+                minute ++;
+                sec = 60;
+                if (minute == 0) {
+                minute = 5;
+                }
+            }
+        }, 1000);
+      }
+
     console.log('move:', move)
     console.log('Player moves:', tracker[0])
     // Things to figure out:
@@ -101,7 +120,7 @@ const GameBoard = () => {
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <label className='game-clock'>{clock}</label>
+                <label className='game-clock' id='timer' onClick={gameClock}>Start</label>
             </div>
             <div className="gameBoard-container">
                 <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>

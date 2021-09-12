@@ -10,6 +10,7 @@ h1{
   margin-left: 28.3rem;
   position: relative;
 
+
 }
 @media only screen and (max-width: 950px) {
   h1 {
@@ -25,9 +26,11 @@ h1{
 }
 
 .game-clock{
-  font-size: 2rem;
-  margin-left: 43.3rem;
-  margin-top: 2rem;
+  font-size: 4.5rem;
+  margin-left: 40.6rem;
+  color: #C9CCD5;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #070F1C;
 }
 @media only screen and (max-width: 950px) {
   .game-clock {

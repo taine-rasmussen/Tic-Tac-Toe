@@ -1,6 +1,7 @@
 body{
   margin: 0;
   background-color: #FFE3E3;
+  z-index: -2;
 }
 h1{
   color: #C9CCD5;
@@ -14,7 +15,7 @@ h1{
 }
 @media only screen and (max-width: 950px) {
   h1 {
-  margin-left: 14.3rem;
+  margin-left: 14.8rem;
   font-size: 5.8rem;
   }
 }
@@ -53,6 +54,11 @@ h1{
   width: 100%;
   margin-top: -21rem;
 }
+@media only screen and (max-width: 950px) {
+  .bg-img {
+    
+  }
+}
 // ---- Background Img ----
 // ---- GameBoard ----
 .gameBoard{
@@ -76,6 +82,11 @@ h1{
   justify-content: center;
   z-index: 1;
   margin-top: -32rem;
+}
+@media only screen and (max-width: 950px) {
+  .gameBoard-container {
+    margin-top: -15rem;
+  }
 }
 
 .gameBoard-cell{

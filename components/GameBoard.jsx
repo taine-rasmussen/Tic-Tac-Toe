@@ -5,7 +5,7 @@ const GameBoard = () => {
     // Cell state used to keep track moves
     const [move, setMove] = useState(null)
 
-    const [clock, setClock] = useState('Start')
+    const [clock, setClock] = useState(0)
 
     // Tracks player moves
     const [tracker, setTracker] = useState([[''],[''],[''],
@@ -26,117 +26,100 @@ const GameBoard = () => {
     const X = 'X'
     const Y = 'Y'
 
-    // Cell onClick func that handles player selecting a cell
-    const cell1 = () => {
-
-        if(gameClock === 0){
-            gameClock()
-        } else {
-             null
+        let min = 0;
+        let sec = 0;
+        // Handles game clock counting up
+        const gameClock = function() {
+            setInterval(function() {
+                setClock(clock + 1)
+            }, 1000);
         }
 
-        if (move % 2 === 0){
-            setInput1('X'), setMove(move + 1), setTracker(tracker[0] = 'X')
-        }   else {
-            setInput1('Y'), setMove(move + 1), setTracker(tracker[0] = 'Y')
-        }
-    }
-    const cell2 = () => {
-          if (move % 2 === 0){
-            setInput2('X'), setMove(move + 1)
-        }   else {
-            setInput2('Y'), setMove(move + 1)
-        }
-    }
-    const cell3 = () => {
-        if (move % 2 === 0){
-            setInput3('X'), setMove(move + 1)
-        }else {
-            setInput3('Y'), setMove(move + 1)
-        }
-    }
-    const cell4 = () => {
-        if (move % 2 === 0){
-            setInput4('X'), setMove(move + 1)
-        }else {
-            setInput4('Y'), setMove(move + 1)
-        }
-    }
-    const cell5 = () => {
-        if (move % 2 === 0){
-            setInput5('X'), setMove(move + 1)
-        }else {
-            setInput5('Y'), setMove(move + 1)
-        }
-    }
-    const cell6 = () => {
-        if (move % 2 === 0){
-            setInput6('X'), setMove(move + 1)
-        }else {
-            setInput6('Y'), setMove(move + 1)
-        }
-    }
-    const cell7 = () => {
-        if (move % 2 === 0){
-            setInput7('X'), setMove(move + 1)
-        }else {
-            setInput7('Y'), setMove(move + 1)
-        }
-    }
-    const cell8 = () => {
-        if (move % 2 === 0){
-            setInput8('X'), setMove(move + 1)
-        }else {
-            setInput8('Y'), setMove(move + 1)
-        }
-    }
-    const cell9 = () => {
-        if (move % 2 === 0){
-            setInput9('X'), setMove(move + 1)
-        }else {
-            setInput9('Y'), setMove(move + 1)
-        }
-    }
+        console.log(clock)
 
+        // Handles reset btn
+        const Reset = () => {
+            // Reset time back to Start string
+            document.getElementById("timer").innerHTML = 'Start'
+            min = 0
+            sec = 0;
+            // Resets move counter
+            setMove(null)
+            // Resets cells to null state
+            setInput1(null)
+        }
 
-    let min = 0;
-    let sec = 0;
-    // Handles game clock counting up
-    const gameClock = function() {
+        // Cell onClick func that handles player selecting a cell
+        const cell1 = () => {
 
-     
-
-        setInterval(function() {
-          document.getElementById("timer").innerHTML = min + " : " + sec;
-          sec++;
-            if (sec == 0) {
-                min ++;
-                sec = 60;
-                if (min == 0) {
-                min = 5;
-                }
+            if(gameClock === 0){
+                gameClock()
+            } else {
+                null
             }
-        }, 1000);
-      }
 
-      // Handles reset btn
-      const Reset = () => {
-
-        // Reset time back to Start string
-        document.getElementById("timer").innerHTML = 'Start'
-        min = 0
-        sec = 0;
-
-        // Resets move counter
-        setMove(null)
-        
-        // Resets cells to null state
-        setInput1(null)
-
-
-
-
-      }
+            if (move % 2 === 0){
+                setInput1('X'), setMove(move + 1), setTracker(tracker[0] = 'X')
+            }   else {
+                setInput1('Y'), setMove(move + 1), setTracker(tracker[0] = 'Y')
+            }
+        }
+        const cell2 = () => {
+            if (move % 2 === 0){
+                setInput2('X'), setMove(move + 1)
+            }   else {
+                setInput2('Y'), setMove(move + 1)
+            }
+        }
+        const cell3 = () => {
+            if (move % 2 === 0){
+                setInput3('X'), setMove(move + 1)
+            }else {
+                setInput3('Y'), setMove(move + 1)
+            }
+        }
+        const cell4 = () => {
+            if (move % 2 === 0){
+                setInput4('X'), setMove(move + 1)
+            }else {
+                setInput4('Y'), setMove(move + 1)
+            }
+        }
+        const cell5 = () => {
+            if (move % 2 === 0){
+                setInput5('X'), setMove(move + 1)
+            }else {
+                setInput5('Y'), setMove(move + 1)
+            }
+        }
+        const cell6 = () => {
+            if (move % 2 === 0){
+                setInput6('X'), setMove(move + 1)
+            }else {
+                setInput6('Y'), setMove(move + 1)
+            }
+        }
+        const cell7 = () => {
+            if (move % 2 === 0){
+                setInput7('X'), setMove(move + 1)
+            }else {
+                setInput7('Y'), setMove(move + 1)
+            }
+        }
+        const cell8 = () => {
+            if (move % 2 === 0){
+                setInput8('X'), setMove(move + 1)
+            }else {
+                setInput8('Y'), setMove(move + 1)
+            }
+        }
+        const cell9 = () => {
+            if (move % 2 === 0){
+                setInput9('X'), setMove(move + 1)
+            }else {
+                setInput9('Y'), setMove(move + 1)
+            }
+        }
 
     console.log('move:', move)
     console.log('Player moves:', tracker[0])
@@ -151,9 +134,12 @@ const GameBoard = () => {
             </div>
 
             <div>
-                <label className='game-clock' id='timer' onClick={gameClock}>Start</label>
-                <button onClick={Reset}>Reset</button>
+                <button className='game-clock' id='timer' onClick={gameClock}>Start</button>
+                <button onClick={Reset} className='reset-btn'>Reset</button>
             </div>
+
+
+                <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
 
 
             <div className="gameBoard-container">

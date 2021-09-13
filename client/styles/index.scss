@@ -1,6 +1,7 @@
 body{
   margin: 0;
   background-color: #FFE3E3;
+  z-index: -2;
 }
 h1{
   color: #C9CCD5;
@@ -14,7 +15,7 @@ h1{
 }
 @media only screen and (max-width: 950px) {
   h1 {
-  margin-left: 14.3rem;
+  margin-left: 14.8rem;
   font-size: 5.8rem;
   }
 }
@@ -22,15 +23,16 @@ h1{
 // ---- Header & Start ----
 .header-conainter{
   margin-top: -4rem;
-
+  z-index: 1;
 }
 
 .game-clock{
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   margin-left: 40.6rem;
   color: #C9CCD5;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #070F1C;
+  border: 2px solid black;
 }
 @media only screen and (max-width: 950px) {
   .game-clock {
@@ -38,7 +40,26 @@ h1{
   font-size: 1.5rem;
   }
 }
+
+.reset-btn{
+  color: #C9CCD5;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #070F1C;
+  border: 1px solid black;
+}
 // ---- Header & Start ----
+// ---- Background Img ----
+.bg-img{
+  z-index: -1;
+  width: 100%;
+  margin-top: -21rem;
+}
+@media only screen and (max-width: 950px) {
+  .bg-img {
+    
+  }
+}
+// ---- Background Img ----
 // ---- GameBoard ----
 .gameBoard{
   max-width: 100vw;
@@ -59,7 +80,13 @@ h1{
   margin: auto;
   padding: 5px;
   justify-content: center;
-  margin-top: -1rem;
+  z-index: 1;
+  margin-top: -32rem;
+}
+@media only screen and (max-width: 950px) {
+  .gameBoard-container {
+    margin-top: -15rem;
+  }
 }
 
 .gameBoard-cell{

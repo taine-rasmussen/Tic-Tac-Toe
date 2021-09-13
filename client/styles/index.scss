@@ -22,7 +22,7 @@ h1{
 // ---- Header & Start ----
 .header-conainter{
   margin-top: -4rem;
-
+  z-index: 1;
 }
 
 .game-clock{
@@ -47,6 +47,14 @@ h1{
   border: 1px solid black;
 }
 // ---- Header & Start ----
+// ---- Background Img ----
+.bg-img{
+  z-index: -1;
+  width: 100%;
+  margin-top: -23rem;
+transform:scale(1.3)
+}
+// ---- Background Img ----
 // ---- GameBoard ----
 .gameBoard{
   max-width: 100vw;
@@ -67,7 +75,8 @@ h1{
   margin: auto;
   padding: 5px;
   justify-content: center;
-  margin-top: -1rem;
+  z-index: 1;
+  margin-top: -35rem;
 }
 
 .gameBoard-cell{

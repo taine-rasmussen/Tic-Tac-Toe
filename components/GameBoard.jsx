@@ -139,6 +139,9 @@ const GameBoard = () => {
             </div>
 
 
+                <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
+
+
             <div className="gameBoard-container">
                 <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>
                 <div className="gameBoard-cell" onClick={cell2}><h1 className='cell-text'>{input2}</h1></div>

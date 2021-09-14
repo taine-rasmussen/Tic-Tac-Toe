@@ -62,6 +62,9 @@ const GameBoard = () => {
             setInput7(null)
             setInput8(null)
             setInput9(null)
+
+            // Stops gameClocl
+            
         }
 
         const gameClock = () => {
@@ -143,8 +146,13 @@ const GameBoard = () => {
 
 
 
-        // Cell onClick func that handles player selecting a cell
+
         const cell1 = () => {
+
+            // Starts gameClock if start btn not pressed when players start a round
+            count === 0 ? gameClock() : null
+
+            // Handles input of X or Y depending on which players turn it is then changes player turn
             if (move % 2 === 0){
                 setInput1('X'), setMove(move + 1), setCellTracker1('X')
             }   else {

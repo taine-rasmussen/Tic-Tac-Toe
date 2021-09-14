@@ -19,8 +19,12 @@ button{
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #070F1C;
   background-color: #FFE3E3;
-  width:70px;
-  height: 35px;
+  width:105px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-style: italic;
+  border: #070F1C 2px;
+  border-radius: 5px;
 }
 
 // ---- Header & Start ----
@@ -35,9 +39,9 @@ button{
 
 
 .reset-btn{
-  margin-left: 80rem;
-  margin-bottom: 10rem;
-  z-index: 2;
+  margin-left: 75rem;
+  margin-bottom: 20rem;
+  z-index: 20;
 }
 // ---- Header & Start ----
 // ---- Background Img ----

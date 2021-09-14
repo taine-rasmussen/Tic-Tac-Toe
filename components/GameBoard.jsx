@@ -246,7 +246,7 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
-            <h3 className='gameClock'>{count}</h3>
+            <h3 className='game-clock'>{count}</h3>
         </div>
     )
 }

@@ -16,6 +16,8 @@ h1{
 
 h3{
   color: #C9CCD5;
+  font-size: 6.5rem;
+
 }
 
 
@@ -53,8 +55,8 @@ button:hover{
 
 
 .reset-btn{
-  margin-left: 75rem;
-  margin-top: -20rem;
+  margin-left: 77rem;
+  margin-top: -6rem;
   z-index: 20;
 }
 // ---- Header & Start ----
@@ -76,7 +78,10 @@ button:hover{
   flex-wrap: wrap;
 }
 
-
+.game-clock{
+  margin-top: -3rem;
+  margin-left: 4rem;
+}
 
 .gameBoard-container{
   height: 440px;

@@ -146,7 +146,7 @@ const GameBoard = () => {
 
 
 
-
+        // All cells onClick funcs
         const cell1 = () => {
 
             // Starts gameClock if start btn not pressed when players start a round
@@ -160,6 +160,8 @@ const GameBoard = () => {
             }
         }
         const cell2 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput2('X'), setMove(move + 1), setCellTracker2('X')
             }   else {
@@ -167,6 +169,8 @@ const GameBoard = () => {
             }
         }
         const cell3 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput3('X'), setMove(move + 1), setCellTracker3('X')
             }else {
@@ -174,6 +178,8 @@ const GameBoard = () => {
             }
         }
         const cell4 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput4('X'), setMove(move + 1), setCellTracker4('X')
             }else {
@@ -181,6 +187,8 @@ const GameBoard = () => {
             }
         }
         const cell5 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput5('X'), setMove(move + 1), setCellTracker5('X')
             }else {
@@ -188,6 +196,8 @@ const GameBoard = () => {
             }
         }
         const cell6 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput6('X'), setMove(move + 1), setCellTracker6('X')
             }else {
@@ -195,6 +205,8 @@ const GameBoard = () => {
             }
         }
         const cell7 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput7('X'), setMove(move + 1), setCellTracker7('X')
             }else {
@@ -202,6 +214,8 @@ const GameBoard = () => {
             }
         }
         const cell8 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput8('X'), setMove(move + 1), setCellTracker8('X')
             }else {
@@ -209,6 +223,8 @@ const GameBoard = () => {
             }
         }
         const cell9 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput9('X'), setMove(move + 1), setCellTracker9('X')
             }else {

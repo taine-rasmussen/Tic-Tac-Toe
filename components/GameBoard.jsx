@@ -5,6 +5,9 @@ const GameBoard = () => {
     // Cell state used to keep track moves
     const [move, setMove] = useState(null)
 
+    // Header to swap from title to winner of game once a player wins
+    const [header, setHeader] = useState('Tic-Tac-Toe')
+
     // handles input for cells on player click
     const [input1, setInput1] = useState(null)
     const [input2, setInput2] = useState(null)
@@ -39,6 +42,7 @@ const GameBoard = () => {
 
     //try recreate cod menu with react - check jackfrags vid for examples
     // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
+    // Snake with react?????
 
 
         // Handles reset btn
@@ -213,7 +217,7 @@ const GameBoard = () => {
     return(
         <div className="gameBoard">
             <div className="header-container">
-                <h1>Tic-Tac-Toe</h1>
+                <h1>{header}</h1>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
 

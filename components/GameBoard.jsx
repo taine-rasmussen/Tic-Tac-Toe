@@ -160,7 +160,6 @@ const GameBoard = () => {
                 <h1>Tic-Tac-Toe</h1>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
-                <img src='/bg.svg' className='bg-img2' alt='test' />
 
 
 

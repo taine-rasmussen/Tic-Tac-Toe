@@ -22,6 +22,29 @@ const GameBoard = () => {
     const [input8, setInput8] = useState(null)
     const [input9, setInput9] = useState(null)
 
+
+
+
+
+    // Make subheader btns the same colour as the SVG - the off White contrast 
+    // Conditionaly render winning screen at end of game - One component - concatenate winner with state
+    // score board to the left kepping track of rounds - if time is used try display time of each round
+    // Reset btn set bottom right of screen adding splash of pink to the negative space
+    // try find ways to make Header darker to help balance colours
+    // Round timer displayed in lower left
+    // Use PS to cut out pink space on tic-tac-toe-bg.svg so bg.svg can be used
+
+    //try recreate cod menu with react - check jackfrags vid for examples
+    // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
+
+
+
+
+
+
+
+
+    
     // Possible player moves
     const X = 'X'
     const Y = 'Y'
@@ -132,14 +155,9 @@ const GameBoard = () => {
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
             </div>
-
-            <div>
-                <button className='game-clock' id='timer' onClick={gameClock}>Start</button>
-                <button onClick={Reset} className='reset-btn'>Reset</button>
-            </div>
-
-
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
+                <img src='/bg.svg' className='bg-img2' alt='test' />
+
 
 
             <div className="gameBoard-container">
@@ -153,6 +171,7 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell8}><h1 className='cell-text'>{input8}</h1></div>
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
+            <button onClick={Reset} className='reset-btn'>Reset</button>
         </div>
     )
 }

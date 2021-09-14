@@ -50,7 +50,7 @@ button:hover{
 
 .reset-btn{
   margin-left: 75rem;
-  margin-bottom: 20rem;
+  margin-top: -20rem;
   z-index: 20;
 }
 // ---- Header & Start ----
@@ -61,11 +61,6 @@ button:hover{
   margin-top: -17rem;
 }
 
-
-.bg-img2{
-  z-index: -2;
-margin-top: -50rem;
-}
 // ---- Background Img ----
 // ---- GameBoard ----
 .gameBoard{
@@ -74,6 +69,7 @@ margin-top: -50rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 
@@ -88,7 +84,7 @@ margin-top: -50rem;
   padding: 5px;
   justify-content: center;
   z-index: 1;
-  margin-top: -30.8rem;
+  margin-top: -32.8rem;
 }
 
 

@@ -64,19 +64,75 @@ const GameBoard = () => {
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
 
-    
-        
-        // Handles checking current game state to see if any win condition has been met
-        const checksForWin = () => {
-
+        // Handles checking current game state to see if any win condition has been met across rows
+        const checksForWinRow= () => {
+                // Checks top row for win conditions
                 if (tracker[0] && tracker[1] && tracker[2] === 'X'){
-                    console.log('X has won the game')
+                    console.log('X won the game via top row')
                 } else if (tracker[0] && tracker[1] && tracker[2] === 'O') {
-                    console.log('O has won the game')
+                    console.log('O won game via top row')
                 }
 
+                // Checks center row for win conditions
+                else if (tracker[3] && tracker[4] && tracker[5] === 'X'){
+                    console.log('X won game via center row')
+                } else if (tracker[3] && tracker[4] && tracker[5] === 'O') {
+                    console.log('O won game via center row')
+                }
+                
+                // Checks bottom row for win conditions
+                else if (tracker[6] && tracker[7] && tracker[8] === 'X'){
+                    console.log('X won game via bottom row')
+                } else if (tracker[6] && tracker[7] && tracker[8] === 'O') {
+                    console.log('O won game via bottom row')
+            }
         }
-        checksForWin()
+        // Handles checking current game state to see if any win condition has been met across cols
+        const checksForWinCol= () => {
+                // Checks left col for win conditions
+                if (tracker[0] && tracker[3] && tracker[6] === 'X'){
+                    console.log('X won the game via left col')
+                } else if (tracker[0] && tracker[3] && tracker[6] === 'O') {
+                    console.log('O won game via left col')
+                }
+                
+                // Checks center col for win conditions
+                else if (tracker[1] && tracker[4] && tracker[7] === 'X'){
+                    console.log('X won game via center col')
+                } else if (tracker[1] && tracker[4] && tracker[7] === 'O') {
+                    console.log('O won game via center col')
+                }
+                
+                // Checks right col for win conditions
+                else if (tracker[2] && tracker[5] && tracker[8] === 'X'){
+                    console.log('X won game via right col')
+                } else if (tracker[2] && tracker[5] && tracker[8] === 'O') {
+                    console.log('O won game via right col')
+            }
+        }  
+        // Handles checking current game state to see if any win condition has been met across diaganles
+        const checksForWinDiaganle = () => {
+                // Checks top left to bottom right diaganle win condition
+                if (tracker[0] && tracker[4] && tracker[8] === 'X'){
+                    console.log('X won via top left diaganle win')
+                } else if (tracker[0] && tracker[4] && tracker[8] === 'O') {
+                    console.log('O won via top left diaganle win')
+                }
+                
+                // Checks bottom left to top right diaganle win condition
+                else if (tracker[2] && tracker[4] && tracker[6] === 'X'){
+                    console.log('O won via top right diaganle win')
+                } else if (tracker[2] && tracker[4] && tracker[6] === 'O') {
+                    console.log('O won via top right diaganle win')
+            }
+        } 
+    checksForWinCol()
+    checksForWinRow()
+    checksForWinDiaganle()
+
+
+
+
 
         // Cell onClick func that handles player selecting a cell
         const cell1 = () => {

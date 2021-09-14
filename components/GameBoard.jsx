@@ -62,18 +62,16 @@ const GameBoard = () => {
             setInput7(null)
             setInput8(null)
             setInput9(null)
+
+            // Stops gameClocl
+            
         }
 
-
-
-
-
-        // Game clock
-        useEffect(() => {
+        const gameClock = () => {
             setInterval(() => {
-              setCount(prevCount => prevCount + 1)
-            }, 1000);
-          }, []);
+                setCount(prevCount => prevCount + 1)
+              }, 1000);
+        }
 
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
@@ -148,8 +146,13 @@ const GameBoard = () => {
 
 
 
-        // Cell onClick func that handles player selecting a cell
+        // All cells onClick funcs
         const cell1 = () => {
+
+            // Starts gameClock if start btn not pressed when players start a round
+            count === 0 ? gameClock() : null
+
+            // Handles input of X or Y depending on which players turn it is then changes player turn
             if (move % 2 === 0){
                 setInput1('X'), setMove(move + 1), setCellTracker1('X')
             }   else {
@@ -157,6 +160,8 @@ const GameBoard = () => {
             }
         }
         const cell2 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput2('X'), setMove(move + 1), setCellTracker2('X')
             }   else {
@@ -164,6 +169,8 @@ const GameBoard = () => {
             }
         }
         const cell3 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput3('X'), setMove(move + 1), setCellTracker3('X')
             }else {
@@ -171,6 +178,8 @@ const GameBoard = () => {
             }
         }
         const cell4 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput4('X'), setMove(move + 1), setCellTracker4('X')
             }else {
@@ -178,6 +187,8 @@ const GameBoard = () => {
             }
         }
         const cell5 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput5('X'), setMove(move + 1), setCellTracker5('X')
             }else {
@@ -185,6 +196,8 @@ const GameBoard = () => {
             }
         }
         const cell6 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput6('X'), setMove(move + 1), setCellTracker6('X')
             }else {
@@ -192,6 +205,8 @@ const GameBoard = () => {
             }
         }
         const cell7 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput7('X'), setMove(move + 1), setCellTracker7('X')
             }else {
@@ -199,6 +214,8 @@ const GameBoard = () => {
             }
         }
         const cell8 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput8('X'), setMove(move + 1), setCellTracker8('X')
             }else {
@@ -206,6 +223,8 @@ const GameBoard = () => {
             }
         }
         const cell9 = () => {
+            count === 0 ? gameClock() : null
+
             if (move % 2 === 0){
                 setInput9('X'), setMove(move + 1), setCellTracker9('X')
             }else {
@@ -246,6 +265,7 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
+            <button onClick={gameClock} className='reset-btn'>Start</button>
             <h3 className='game-clock'>{count}</h3>
         </div>
     )

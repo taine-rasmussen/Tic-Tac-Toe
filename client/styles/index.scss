@@ -13,12 +13,7 @@ h1{
   margin-bottom: -1rem;
 
 }
-@media only screen and (max-width: 950px) {
-  h1 {
-  margin-left: 14.8rem;
-  font-size: 5.8rem;
-  }
-}
+
 
 button{
   -webkit-text-stroke-width: 1px;
@@ -37,12 +32,7 @@ button{
 .game-clock{
  
 }
-@media only screen and (max-width: 950px) {
-  .game-clock {
-  margin-left: 28rem;
-  font-size: 1.5rem;
-  }
-}
+
 
 .reset-btn{
   margin-left: 80rem;
@@ -56,11 +46,7 @@ button{
   width: 100%;
   margin-top: -17rem;
 }
-@media only screen and (max-width: 950px) {
-  .bg-img {
-    
-  }
-}
+
 
 .bg-img2{
   z-index: -2;
@@ -90,11 +76,7 @@ margin-top: -50rem;
   z-index: 1;
   margin-top: -30.8rem;
 }
-@media only screen and (max-width: 950px) {
-  .gameBoard-container {
-    margin-top: -15rem;
-  }
-}
+
 
 .gameBoard-cell{
   border: 4px solid #C9CCD5;

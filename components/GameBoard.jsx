@@ -64,16 +64,11 @@ const GameBoard = () => {
             setInput9(null)
         }
 
-
-
-
-
-        // Game clock
-        useEffect(() => {
+        const gameClock = () => {
             setInterval(() => {
-              setCount(prevCount => prevCount + 1)
-            }, 1000);
-          }, []);
+                setCount(prevCount => prevCount + 1)
+              }, 1000);
+        }
 
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
@@ -246,6 +241,7 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
+            <button onClick={gameClock} className='reset-btn'>Start</button>
             <h3 className='game-clock'>{count}</h3>
         </div>
     )

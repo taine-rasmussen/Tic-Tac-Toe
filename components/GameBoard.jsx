@@ -195,6 +195,15 @@ const GameBoard = () => {
             }
         }
 
+
+        // Handles a draw - will need to be update to check if win is true else display draw
+        const Draw = () => {
+            if (move > 9){
+                window.alert('ITS A DRAW')
+            }
+        }
+        Draw()
+
     console.log('move:', move)
     console.log('Player moves:', tracker)
     // Things to figure out:

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const GameBoard = () => {
 
@@ -7,6 +7,9 @@ const GameBoard = () => {
 
     // Header to swap from title to winner of game once a player wins
     const [header, setHeader] = useState('Tic-Tac-Toe')
+
+    // Used to update game clock
+    const [count, setCount] = useState(0);
 
     // handles input for cells on player click
     const [input1, setInput1] = useState(null)
@@ -19,7 +22,7 @@ const GameBoard = () => {
     const [input8, setInput8] = useState(null)
     const [input9, setInput9] = useState(null)
 
-    // Cell values to tracker state of each cell as players make moves throughout the game
+    // Cell values to track state of each cell as players make moves throughout the game
     const [cellTracker1, setCellTracker1] = useState('empty')
     const [cellTracker2, setCellTracker2] = useState('empty')
     const [cellTracker3, setCellTracker3] = useState('empty')
@@ -61,6 +64,17 @@ const GameBoard = () => {
             setInput9(null)
         }
 
+
+
+
+
+        // Game clock
+        useEffect(() => {
+            setInterval(() => {
+              setCount(prevCount => prevCount + 1)
+            }, 1000);
+          }, []);
+
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
 
@@ -68,9 +82,9 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    console.log('X won the game via top row')
+                    console.log('X won game top center row')
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
-                    console.log('O won game via top row')
+                    console.log('O won game top center row')
                 }
 
                 // Checks center row for win conditions
@@ -210,10 +224,7 @@ const GameBoard = () => {
 
     console.log('move:', move)
     console.log('Player moves:', tracker)
-    // Things to figure out:
-    // Each time player moves update move tracker array and declare what was placed on the
-    // Will need to write all possible win conditions for the game and check if they are already met when player goes to move again
-    // Try storing possible win conditions as arrays and check if playerTracker matches 
+    
     return(
         <div className="gameBoard">
             <div className="header-container">
@@ -235,6 +246,7 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
+            <h3 className='gameClock'>{count}</h3>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 body{
   margin: 0;
   background-color: #FFE3E3;
-  z-index: -2;
+  z-index: -5;
 }
 h1{
   color: #C9CCD5;
@@ -13,11 +13,18 @@ h1{
   margin-bottom: -1rem;
 
 }
-@media only screen and (max-width: 950px) {
-  h1 {
-  margin-left: 14.8rem;
-  font-size: 5.8rem;
-  }
+
+
+button{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #070F1C;
+  background-color: #FFE3E3;
+  width:105px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-style: italic;
+  border: #070F1C 2px;
+  border-radius: 5px;
 }
 
 // ---- Header & Start ----
@@ -27,37 +34,27 @@ h1{
 }
 
 .game-clock{
-  font-size: 2.5rem;
-  margin-left: 40.6rem;
-  color: #C9CCD5;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #070F1C;
-  border: 2px solid black;
-}
-@media only screen and (max-width: 950px) {
-  .game-clock {
-  margin-left: 28rem;
-  font-size: 1.5rem;
-  }
+ 
 }
 
+
 .reset-btn{
-  color: #C9CCD5;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #070F1C;
-  border: 1px solid black;
+  margin-left: 75rem;
+  margin-bottom: 20rem;
+  z-index: 20;
 }
 // ---- Header & Start ----
 // ---- Background Img ----
 .bg-img{
   z-index: -1;
   width: 100%;
-  margin-top: -21rem;
+  margin-top: -17rem;
 }
-@media only screen and (max-width: 950px) {
-  .bg-img {
-    
-  }
+
+
+.bg-img2{
+  z-index: -2;
+margin-top: -50rem;
 }
 // ---- Background Img ----
 // ---- GameBoard ----
@@ -81,13 +78,9 @@ h1{
   padding: 5px;
   justify-content: center;
   z-index: 1;
-  margin-top: -32rem;
+  margin-top: -30.8rem;
 }
-@media only screen and (max-width: 950px) {
-  .gameBoard-container {
-    margin-top: -15rem;
-  }
-}
+
 
 .gameBoard-cell{
   border: 4px solid #C9CCD5;

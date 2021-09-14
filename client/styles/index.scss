@@ -16,7 +16,7 @@ h1{
 
 
 button{
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1.2px;
   -webkit-text-stroke-color: #070F1C;
   background-color: #FFE3E3;
   width:105px;
@@ -25,6 +25,16 @@ button{
   font-style: italic;
   border: #070F1C 2px;
   border-radius: 5px;
+}
+
+button:hover{
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #93B5C6;
+  border: #93B5C6 3px solid;
+  color: #93B5C6;
+  box-shadow: #93B5C6 1px 2.5px;
+  background-color: #ffe3e3f0;
+
 }
 
 // ---- Header & Start ----

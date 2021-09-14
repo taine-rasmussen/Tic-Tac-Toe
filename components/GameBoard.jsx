@@ -67,16 +67,33 @@ const GameBoard = () => {
     
         
         // Handles checking current game state to see if any win condition has been met
-        const checksForWin = () => {
+        const checksForWinRow= () => {
 
+                // Checks top row for win conditions
                 if (tracker[0] && tracker[1] && tracker[2] === 'X'){
-                    console.log('X has won the game')
+                    console.log('X won the game via top row')
                 } else if (tracker[0] && tracker[1] && tracker[2] === 'O') {
-                    console.log('O has won the game')
+                    console.log('O won game via top row')
                 }
-
+                
+                // Checks center row for win conditions
+                else if (tracker[3] && tracker[4] && tracker[5] === 'X'){
+                    console.log('X won game via center row')
+                } else if (tracker[3] && tracker[4] && tracker[5] === 'O') {
+                    console.log('O won game via center row')
+                }
+                
+                // Checks bottom row for win conditions
+                else if (tracker[6] && tracker[7] && tracker[8] === 'X'){
+                    console.log('X won game via bottom row')
+                } else if (tracker[6] && tracker[7] && tracker[8] === 'O') {
+                    console.log('O won game via bottom row')
+                }
         }
-        checksForWin()
+        checksForWinRow()
+
+
+
 
         // Cell onClick func that handles player selecting a cell
         const cell1 = () => {

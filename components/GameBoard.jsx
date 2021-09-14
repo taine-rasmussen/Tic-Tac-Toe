@@ -5,8 +5,6 @@ const GameBoard = () => {
     // Cell state used to keep track moves
     const [move, setMove] = useState(null)
 
-    const [clock, setClock] = useState(0)
-
     // Tracks player moves
     const [tracker, setTracker] = useState([[''],[''],[''],
                                             [''],[''],[''],
@@ -39,26 +37,10 @@ const GameBoard = () => {
 
 
 
-
-
-
-
-
     
     // Possible player moves
     const X = 'X'
     const Y = 'Y'
-
-        let min = 0;
-        let sec = 0;
-        // Handles game clock counting up
-        const gameClock = function() {
-            setInterval(function() {
-                setClock(clock + 1)
-            }, 1000);
-        }
-
-        console.log(clock)
 
         // Handles reset btn
         const Reset = () => {
@@ -78,13 +60,6 @@ const GameBoard = () => {
 
         // Cell onClick func that handles player selecting a cell
         const cell1 = () => {
-
-            if(gameClock === 0){
-                gameClock()
-            } else {
-                null
-            }
-
             if (move % 2 === 0){
                 setInput1('X'), setMove(move + 1), setTracker(tracker[0] = 'X')
             }   else {

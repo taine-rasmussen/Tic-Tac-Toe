@@ -45,12 +45,6 @@ const GameBoard = () => {
     // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
 
 
-
-    
-    // Possible player moves
-    const X = 'X'
-    const O = 'O'
-
         // Handles reset btn
         const Reset = () => {
             // Resets move counter
@@ -67,16 +61,29 @@ const GameBoard = () => {
             setInput9(null)
         }
 
+        // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
 
+    
         
+        // Handles checking current game state to see if any win condition has been met
+        const checksForWin = () => {
+
+                if (tracker[0] && tracker[1] && tracker[2] === 'X'){
+                    console.log('X has won the game')
+                } else if (tracker[0] && tracker[1] && tracker[2] === 'O') {
+                    console.log('O has won the game')
+                }
+
+        }
+        checksForWin()
 
         // Cell onClick func that handles player selecting a cell
         const cell1 = () => {
             if (move % 2 === 0){
                 setInput1('X'), setMove(move + 1), setCellTracker1('X')
             }   else {
-                setInput1('Y'), setMove(move + 1), setCellTracker1('O')
+                setInput1('O'), setMove(move + 1), setCellTracker1('O')
             }
         }
         const cell2 = () => {

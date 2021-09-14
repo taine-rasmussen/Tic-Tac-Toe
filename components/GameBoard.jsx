@@ -62,14 +62,18 @@ const GameBoard = () => {
 
         // Handles reset btn
         const Reset = () => {
-            // Reset time back to Start string
-            document.getElementById("timer").innerHTML = 'Start'
-            min = 0
-            sec = 0;
             // Resets move counter
             setMove(null)
             // Resets cells to null state
             setInput1(null)
+            setInput2(null)
+            setInput3(null)
+            setInput4(null)
+            setInput5(null)
+            setInput6(null)
+            setInput7(null)
+            setInput8(null)
+            setInput9(null)
         }
 
         // Cell onClick func that handles player selecting a cell

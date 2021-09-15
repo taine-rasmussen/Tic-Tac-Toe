@@ -6,7 +6,10 @@ const GameBoard = () => {
     const [move, setMove] = useState(null)
 
     // Used to update game clock
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0)
+
+    // Toggles win condition message
+    // const [color, setColor] = useState('#FFE3E3')
 
     // GameState flips to true on game win 
     const [gameState, setGameState] = useState(false)
@@ -38,7 +41,7 @@ const GameBoard = () => {
     // THINGS TO COMPLETE FOR MVP
 
     // sub-header default to set to bg colour so cant see - update on win to dark colour - hope you like my janky fix ;)
-    // Change round win message on all cells
+    // sub header should reset 
     // clock to reset on btn reset
     // clock to stop on game win
     // Not be able to overwrite move once made
@@ -48,10 +51,60 @@ const GameBoard = () => {
 
 
 
+
+    // text will blend into background
+    // when win condition true styling on text will change to be visable
+    // when reset text will blend in with background again
     
     //try recreate cod menu with react - check jackfrags vid for examples
     // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
     // Snake with react?????
+
+
+
+
+
+
+
+    let color = '#FFE3E3'
+
+
+    const toggleColor = () => {
+        color = '#070F1C'
+    }
+
+    
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Handles reset btn
         const Reset = () => {
@@ -86,7 +139,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     return header = 'O won the round!'
                 }
@@ -248,12 +301,13 @@ const GameBoard = () => {
 
     console.log('move:', move)
     console.log('Player moves:', tracker)
-    
+    console.log(color)
+
     return(
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <h4 className='sub-header'>{header}</h4>
+                <h4 className='sub-header' style={{color: color}}>{header}</h4>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='background-img' />
                 

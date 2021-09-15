@@ -11,6 +11,9 @@ const GameBoard = () => {
     // Used to update game clock
     const [count, setCount] = useState(0);
 
+    // GameState flips to true on game win 
+    const [gameState, setGameState] = useState(false)
+
     // handles input for cells on player click
     const [input1, setInput1] = useState(null)
     const [input2, setInput2] = useState(null)
@@ -35,14 +38,19 @@ const GameBoard = () => {
 
 
 
-    // Make subheader btns the same colour as the SVG - the off White contrast 
+
     // Conditionaly render winning screen at end of game - One component - concatenate winner with state
     // score board to the left kepping track of rounds - if time is used try display time of each round
-    // Reset btn set bottom right of screen adding splash of pink to the negative space
     // try find ways to make Header darker to help balance colours
-    // Round timer displayed in lower left
     // Use PS to cut out pink space on tic-tac-toe-bg.svg so bg.svg can be used
 
+
+    // on win push string of win to cell which can trigger a win condition func to update UI
+
+
+
+
+    
     //try recreate cod menu with react - check jackfrags vid for examples
     // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
     // Snake with react?????
@@ -62,9 +70,13 @@ const GameBoard = () => {
             setInput7(null)
             setInput8(null)
             setInput9(null)
+        }
 
-            // Stops gameClocl
-            
+
+        let test = 'Tic-Tac-Toe'
+
+        const onWin = () => {
+            setHeader('X has won the game')
         }
 
         // Starts gameClock
@@ -81,7 +93,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    console.log('X won game top center row')
+                    return test = 'X has won the game'
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     console.log('O won game top center row')
                 }
@@ -248,7 +260,7 @@ const GameBoard = () => {
     return(
         <div className="gameBoard">
             <div className="header-container">
-                <h1>{header}</h1>
+                <h1>{test}</h1>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
 

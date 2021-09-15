@@ -57,7 +57,7 @@ const GameBoard = () => {
 
 
         // Handles reset btn
-        const Reset = () => {
+        const Reset = (test) => {
             // Resets move counter
             setMove(null)
             // Resets cells to null state
@@ -70,6 +70,8 @@ const GameBoard = () => {
             setInput7(null)
             setInput8(null)
             setInput9(null)
+
+            return test = 'Tic-Tac-Toe'
         }
 
 
@@ -95,7 +97,7 @@ const GameBoard = () => {
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
                     return test = 'X has won the game'
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
-                    console.log('O won game top center row')
+                    return test = 'O has won the game'
                 }
 
                 // Checks center row for win conditions

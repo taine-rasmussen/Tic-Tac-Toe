@@ -11,6 +11,9 @@ const GameBoard = () => {
     // Used to update game clock
     const [count, setCount] = useState(0);
 
+    // GameState flips to true on game win 
+    const [gameState, setGameState] = useState(false)
+
     // handles input for cells on player click
     const [input1, setInput1] = useState(null)
     const [input2, setInput2] = useState(null)
@@ -35,14 +38,19 @@ const GameBoard = () => {
 
 
 
-    // Make subheader btns the same colour as the SVG - the off White contrast 
+
     // Conditionaly render winning screen at end of game - One component - concatenate winner with state
     // score board to the left kepping track of rounds - if time is used try display time of each round
-    // Reset btn set bottom right of screen adding splash of pink to the negative space
     // try find ways to make Header darker to help balance colours
-    // Round timer displayed in lower left
     // Use PS to cut out pink space on tic-tac-toe-bg.svg so bg.svg can be used
 
+
+    // on win push string of win to cell which can trigger a win condition func to update UI
+
+
+
+
+    
     //try recreate cod menu with react - check jackfrags vid for examples
     // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
     // Snake with react?????
@@ -62,12 +70,17 @@ const GameBoard = () => {
             setInput7(null)
             setInput8(null)
             setInput9(null)
-
-            // Stops gameClocl
-            
         }
 
-        const gameClock = () => {
+
+        let test = 'Tic-Tac-Toe'
+
+        const onWin = () => {
+            setHeader('X has won the game')
+        }
+
+        // Starts gameClock
+        const startGameClock = () => {
             setInterval(() => {
                 setCount(prevCount => prevCount + 1)
               }, 1000);
@@ -80,7 +93,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    console.log('X won game top center row')
+                    return test = 'X has won the game'
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     console.log('O won game top center row')
                 }
@@ -150,7 +163,7 @@ const GameBoard = () => {
         const cell1 = () => {
 
             // Starts gameClock if start btn not pressed when players start a round
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             // Handles input of X or Y depending on which players turn it is then changes player turn
             if (move % 2 === 0){
@@ -160,7 +173,7 @@ const GameBoard = () => {
             }
         }
         const cell2 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput2('X'), setMove(move + 1), setCellTracker2('X')
@@ -169,7 +182,7 @@ const GameBoard = () => {
             }
         }
         const cell3 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput3('X'), setMove(move + 1), setCellTracker3('X')
@@ -178,7 +191,7 @@ const GameBoard = () => {
             }
         }
         const cell4 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput4('X'), setMove(move + 1), setCellTracker4('X')
@@ -187,7 +200,7 @@ const GameBoard = () => {
             }
         }
         const cell5 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput5('X'), setMove(move + 1), setCellTracker5('X')
@@ -196,7 +209,7 @@ const GameBoard = () => {
             }
         }
         const cell6 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput6('X'), setMove(move + 1), setCellTracker6('X')
@@ -205,7 +218,7 @@ const GameBoard = () => {
             }
         }
         const cell7 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput7('X'), setMove(move + 1), setCellTracker7('X')
@@ -214,7 +227,7 @@ const GameBoard = () => {
             }
         }
         const cell8 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput8('X'), setMove(move + 1), setCellTracker8('X')
@@ -223,7 +236,7 @@ const GameBoard = () => {
             }
         }
         const cell9 = () => {
-            count === 0 ? gameClock() : null
+            count === 0 ? startGameClock() : null
 
             if (move % 2 === 0){
                 setInput9('X'), setMove(move + 1), setCellTracker9('X')
@@ -247,7 +260,7 @@ const GameBoard = () => {
     return(
         <div className="gameBoard">
             <div className="header-container">
-                <h1>{header}</h1>
+                <h1>{test}</h1>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='test' />
 
@@ -265,7 +278,7 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
-            <button onClick={gameClock} className='start-btn'>Start</button>
+            <button onClick={startGameClock} className='start-btn'>Start</button>
             <h3 className='game-clock'>{count}</h3>
         </div>
     )

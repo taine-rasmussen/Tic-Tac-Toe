@@ -8,9 +8,6 @@ const GameBoard = () => {
     // Used to update game clock
     const [count, setCount] = useState(0)
 
-    // Toggles win condition message
-    // const [color, setColor] = useState('#FFE3E3')
-
     // GameState flips to true on game win 
     const [gameState, setGameState] = useState(false)
 
@@ -64,47 +61,13 @@ const GameBoard = () => {
 
 
 
-
-
+    // Default color for subheader
     let color = '#FFE3E3'
 
-
+    // Flips subheader color so its visible on round win
     const toggleColor = () => {
         color = '#070F1C'
     }
-
-    
-        
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         // Handles reset btn
         const Reset = () => {
@@ -141,60 +104,60 @@ const GameBoard = () => {
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
                     return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
                 }
 
                 // Checks center row for win conditions
                 else if (tracker[3] === 'X' && tracker[4] === 'X' && tracker[5] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[3] === 'O' && tracker[4] === 'O' && tracker[5] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks bottom row for win conditions
                 else if (tracker[6] === 'X' && tracker[7] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[6] === 'O' && tracker[7] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
             }
         }
         // Handles checking current game state to see if any win condition has been met across cols
         const checksForWinCol= () => {
                 // Checks left col for win conditions
                 if (tracker[0] === 'X' && tracker[3] === 'X' && tracker[6] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[3] === 'O' && tracker[6] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks center col for win conditions
                 else if (tracker[1] === 'X' && tracker[4] === 'X' && tracker[7] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[1] === 'O' && tracker[4] === 'O' && tracker[7] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks right col for win conditions
                 else if (tracker[2] === 'X' && tracker[5] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[2] === 'O' && tracker[5] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
             }
         }  
         // Handles checking current game state to see if any win condition has been met across diaganles
         const checksForWinDiaganle = () => {
                 // Checks top left to bottom right diaganle win condition
                 if (tracker[0] === 'X' && tracker[4] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[4] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks bottom left to top right diaganle win condition
                 else if (tracker[2] === 'X' && tracker[4] === 'X' && tracker[6] === 'X'){
-                    return header = 'X won the round!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[2] === 'O' && tracker[4] === 'O' && tracker[6] === 'O') {
-                    return header = 'O won the round!'
+                    return header = 'O won the round!', toggleColor()
             }
         } 
     checksForWinCol()

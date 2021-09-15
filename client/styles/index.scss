@@ -11,7 +11,7 @@ h1{
   margin-left: 28.3rem;
   position: relative;
   margin-bottom: -1rem;
-
+  margin-top: 6rem;
 }
 
 h3{
@@ -39,8 +39,11 @@ button:hover{
 
 // ---- Header & Start ----
 .header-conainter{
-  margin-top: -4rem;
   z-index: 1;
+}
+
+.sub-header{
+  margin-left: 42rem;
 }
 
 

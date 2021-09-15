@@ -70,7 +70,7 @@ const GameBoard = () => {
         }
 
         // Landing header that changes on game win
-        let header = 'Tic-Tac-Toe'
+        let header = 'player has won'
 
         // Starts gameClock
         const startGameClock = () => {
@@ -253,7 +253,7 @@ const GameBoard = () => {
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <h4>{header}</h4>
+                <h4 className='sub-header'>{header}</h4>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='background-img' />
 

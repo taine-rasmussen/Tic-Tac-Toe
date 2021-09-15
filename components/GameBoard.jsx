@@ -12,15 +12,15 @@ const GameBoard = () => {
     const [gameState, setGameState] = useState(false)
 
     // handles input for cells on player click
-    const [input1, setInput1] = useState(null)
-    const [input2, setInput2] = useState(null)
-    const [input3, setInput3] = useState(null)
-    const [input4, setInput4] = useState(null)
-    const [input5, setInput5] = useState(null)
-    const [input6, setInput6] = useState(null)
-    const [input7, setInput7] = useState(null)
-    const [input8, setInput8] = useState(null)
-    const [input9, setInput9] = useState(null)
+    const [input1, setInput1] = useState('')
+    const [input2, setInput2] = useState('')
+    const [input3, setInput3] = useState('')
+    const [input4, setInput4] = useState('')
+    const [input5, setInput5] = useState('')
+    const [input6, setInput6] = useState('')
+    const [input7, setInput7] = useState('')
+    const [input8, setInput8] = useState('')
+    const [input9, setInput9] = useState('')
 
     // Cell values to track state of each cell as players make moves throughout the game
     const [cellTracker1, setCellTracker1] = useState('empty')
@@ -37,8 +37,8 @@ const GameBoard = () => {
 
     // THINGS TO COMPLETE FOR MVP
 
-    // sub-header default to set to bg colour so cant see - update on win to dark colour - hope you like my janky fix ;)
-    // sub header should reset 
+
+
     // clock to reset on btn reset
     // clock to stop on game win
     // Not be able to overwrite move once made
@@ -49,13 +49,6 @@ const GameBoard = () => {
 
 
 
-    // text will blend into background
-    // when win condition true styling on text will change to be visable
-    // when reset text will blend in with background again
-    
-    //try recreate cod menu with react - check jackfrags vid for examples
-    // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
-    // Snake with react?????
 
 
 
@@ -68,6 +61,8 @@ const GameBoard = () => {
     const toggleColor = () => {
         color = '#070F1C'
     }
+
+
 
         // Handles reset btn
         const Reset = () => {
@@ -83,6 +78,9 @@ const GameBoard = () => {
             setInput7(null)
             setInput8(null)
             setInput9(null)
+
+            // Resets clock
+
         }
 
         // Landing header that changes on game win
@@ -94,6 +92,9 @@ const GameBoard = () => {
                 setCount(prevCount => prevCount + 1)
             }, 1000);
         }
+
+        // Stops gameClock
+       
 
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
@@ -174,82 +175,118 @@ const GameBoard = () => {
             count === 0 ? startGameClock() : null
 
             // Handles input of X or Y depending on which players turn it is then changes player turn
-            if (move % 2 === 0){
-                setInput1('X'), setMove(move + 1), setCellTracker1('X')
+            if (input1 != ''){
+                return null
             }   else {
-                setInput1('O'), setMove(move + 1), setCellTracker1('O')
+                if (move % 2 === 0){
+                    return setInput1('X'), setMove(move + 1), setCellTracker1('X')
+                }else {
+                    return setInput1('O'), setMove(move + 1), setCellTracker1('O')
+                }
             }
         }
         const cell2 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput2('X'), setMove(move + 1), setCellTracker2('X')
+            if (input2 != ''){
+                return null
             }   else {
-                setInput2('O'), setMove(move + 1), setCellTracker2('O')
+                if (move % 2 === 0){
+                    return setInput2('X'), setMove(move + 1), setCellTracker2('X')
+                }else {
+                    return setInput2('O'), setMove(move + 1), setCellTracker2('O')
+                }
             }
         }
         const cell3 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput3('X'), setMove(move + 1), setCellTracker3('X')
-            }else {
-                setInput3('O'), setMove(move + 1), setCellTracker3('O')
+            if (input3 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput3('X'), setMove(move + 1), setCellTracker3('X')
+                }else {
+                    return setInput3('O'), setMove(move + 1), setCellTracker3('O')
+                }
             }
         }
         const cell4 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput4('X'), setMove(move + 1), setCellTracker4('X')
-            }else {
-                setInput4('O'), setMove(move + 1), setCellTracker4('O')
+            if (input4 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput4('X'), setMove(move + 1), setCellTracker4('X')
+                }else {
+                    return setInput4('O'), setMove(move + 1), setCellTracker4('O')
+                }
             }
         }
         const cell5 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput5('X'), setMove(move + 1), setCellTracker5('X')
-            }else {
-                setInput5('O'), setMove(move + 1), setCellTracker5('O')
+            if (input5 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput5('X'), setMove(move + 1), setCellTracker5('X')
+                }else {
+                    return setInput5('O'), setMove(move + 1), setCellTracker5('O')
+                }
             }
         }
         const cell6 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput6('X'), setMove(move + 1), setCellTracker6('X')
-            }else {
-                setInput6('O'), setMove(move + 1), setCellTracker6('O')
+            if (input6 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput6('X'), setMove(move + 1), setCellTracker6('X')
+                }else {
+                    return setInput6('O'), setMove(move + 1), setCellTracker6('O')
+                }
             }
         }
         const cell7 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput7('X'), setMove(move + 1), setCellTracker7('X')
-            }else {
-                setInput7('O'), setMove(move + 1), setCellTracker7('O')
+            if (input7 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput7('X'), setMove(move + 1), setCellTracker7('X')
+                }else {
+                    return setInput7('O'), setMove(move + 1), setCellTracker7('O')
+                }
             }
         }
         const cell8 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput8('X'), setMove(move + 1), setCellTracker8('X')
-            }else {
-                setInput8('O'), setMove(move + 1), setCellTracker8('O')
+            if (input8 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput8('X'), setMove(move + 1), setCellTracker8('X')
+                }else {
+                    return setInput8('O'), setMove(move + 1), setCellTracker8('O')
+                }
             }
         }
         const cell9 = () => {
             count === 0 ? startGameClock() : null
 
-            if (move % 2 === 0){
-                setInput9('X'), setMove(move + 1), setCellTracker9('X')
-            }else {
-                setInput9('O'), setMove(move + 1), setCellTracker9('O')
+            if (input9 != ''){
+                return null
+            }   else {
+                if (move % 2 === 0){
+                    return setInput9('X'), setMove(move + 9), setCellTracker9('X')
+                }else {
+                    return setInput9('O'), setMove(move + 9), setCellTracker9('O')
+                }
             }
         }
 

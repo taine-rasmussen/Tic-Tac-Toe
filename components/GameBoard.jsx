@@ -102,55 +102,55 @@ const GameBoard = () => {
 
                 // Checks center row for win conditions
                 else if (tracker[3] === 'X' && tracker[4] === 'X' && tracker[5] === 'X'){
-                    console.log('X won game via center row')
+                    return test = 'X has won the game'
                 } else if (tracker[3] === 'O' && tracker[4] === 'O' && tracker[5] === 'O') {
-                    console.log('O won game via center row')
+                    return test = 'O has won the game'
                 }
                 
                 // Checks bottom row for win conditions
                 else if (tracker[6] === 'X' && tracker[7] === 'X' && tracker[8] === 'X'){
-                    console.log('X won game via bottom row')
+                    return test = 'X has won the game'
                 } else if (tracker[6] === 'O' && tracker[7] === 'O' && tracker[8] === 'O') {
-                    console.log('O won game via bottom row')
+                    return test = 'O has won the game'
             }
         }
         // Handles checking current game state to see if any win condition has been met across cols
         const checksForWinCol= () => {
                 // Checks left col for win conditions
                 if (tracker[0] === 'X' && tracker[3] === 'X' && tracker[6] === 'X'){
-                    console.log('X won the game via left col')
+                    return test = 'X has won the game'
                 } else if (tracker[0] === 'O' && tracker[3] === 'O' && tracker[6] === 'O') {
-                    console.log('O won game via left col')
+                    return test = 'O has won the game'
                 }
                 
                 // Checks center col for win conditions
                 else if (tracker[1] === 'X' && tracker[4] === 'X' && tracker[7] === 'X'){
-                    console.log('X won game via center col')
+                    return test = 'X has won the game'
                 } else if (tracker[1] === 'O' && tracker[4] === 'O' && tracker[7] === 'O') {
-                    console.log('O won game via center col')
+                    return test = 'O has won the game'
                 }
                 
                 // Checks right col for win conditions
                 else if (tracker[2] === 'X' && tracker[5] === 'X' && tracker[8] === 'X'){
-                    console.log('X won game via right col')
+                    return test = 'X has won the game'
                 } else if (tracker[2] === 'O' && tracker[5] === 'O' && tracker[8] === 'O') {
-                    console.log('O won game via right col')
+                    return test = 'O has won the game'
             }
         }  
         // Handles checking current game state to see if any win condition has been met across diaganles
         const checksForWinDiaganle = () => {
                 // Checks top left to bottom right diaganle win condition
                 if (tracker[0] === 'X' && tracker[4] === 'X' && tracker[8] === 'X'){
-                    console.log('X won via top left diaganle win')
+                    return test = 'X has won the game'
                 } else if (tracker[0] === 'O' && tracker[4] === 'O' && tracker[8] === 'O') {
-                    console.log('O won via top left diaganle win')
+                    return test = 'O has won the game'
                 }
                 
                 // Checks bottom left to top right diaganle win condition
                 else if (tracker[2] === 'X' && tracker[4] === 'X' && tracker[6] === 'X'){
-                    console.log('O won via top right diaganle win')
+                    return test = 'X has won the game'
                 } else if (tracker[2] === 'O' && tracker[4] === 'O' && tracker[6] === 'O') {
-                    console.log('O won via top right diaganle win')
+                    return test = 'O has won the game'
             }
         } 
     checksForWinCol()

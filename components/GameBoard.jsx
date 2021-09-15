@@ -6,7 +6,7 @@ const GameBoard = () => {
     const [move, setMove] = useState(null)
 
     // Used to update game clock
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0)
 
     // GameState flips to true on game win 
     const [gameState, setGameState] = useState(false)
@@ -35,23 +35,39 @@ const GameBoard = () => {
 
 
 
+    // THINGS TO COMPLETE FOR MVP
 
-    // Conditionaly render winning screen at end of game - One component - concatenate winner with state
-    // score board to the left kepping track of rounds - if time is used try display time of each round
-    // try find ways to make Header darker to help balance colours
-    // Use PS to cut out pink space on tic-tac-toe-bg.svg so bg.svg can be used
-
-
-    // on win push string of win to cell which can trigger a win condition func to update UI
-
-
+    // sub-header default to set to bg colour so cant see - update on win to dark colour - hope you like my janky fix ;)
+    // sub header should reset 
+    // clock to reset on btn reset
+    // clock to stop on game win
+    // Not be able to overwrite move once made
+    // Make the draw better - remove window alert and just update header with draw
 
 
+
+
+
+
+    // text will blend into background
+    // when win condition true styling on text will change to be visable
+    // when reset text will blend in with background again
     
     //try recreate cod menu with react - check jackfrags vid for examples
     // build analog clock - figure 8 out of two squares of divs on top - sections light up as time changes - add animtations to transtion - fliping
     // Snake with react?????
 
+
+
+
+
+    // Default color for subheader
+    let color = '#FFE3E3'
+
+    // Flips subheader color so its visible on round win
+    const toggleColor = () => {
+        color = '#070F1C'
+    }
 
         // Handles reset btn
         const Reset = () => {
@@ -86,62 +102,62 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won!'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
                 }
 
                 // Checks center row for win conditions
                 else if (tracker[3] === 'X' && tracker[4] === 'X' && tracker[5] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[3] === 'O' && tracker[4] === 'O' && tracker[5] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks bottom row for win conditions
                 else if (tracker[6] === 'X' && tracker[7] === 'X' && tracker[8] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[6] === 'O' && tracker[7] === 'O' && tracker[8] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
             }
         }
         // Handles checking current game state to see if any win condition has been met across cols
         const checksForWinCol= () => {
                 // Checks left col for win conditions
                 if (tracker[0] === 'X' && tracker[3] === 'X' && tracker[6] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[3] === 'O' && tracker[6] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks center col for win conditions
                 else if (tracker[1] === 'X' && tracker[4] === 'X' && tracker[7] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[1] === 'O' && tracker[4] === 'O' && tracker[7] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks right col for win conditions
                 else if (tracker[2] === 'X' && tracker[5] === 'X' && tracker[8] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[2] === 'O' && tracker[5] === 'O' && tracker[8] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
             }
         }  
         // Handles checking current game state to see if any win condition has been met across diaganles
         const checksForWinDiaganle = () => {
                 // Checks top left to bottom right diaganle win condition
                 if (tracker[0] === 'X' && tracker[4] === 'X' && tracker[8] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[4] === 'O' && tracker[8] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks bottom left to top right diaganle win condition
                 else if (tracker[2] === 'X' && tracker[4] === 'X' && tracker[6] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[2] === 'O' && tracker[4] === 'O' && tracker[6] === 'O') {
-                    return header = 'O has won the game'
+                    return header = 'O won the round!', toggleColor()
             }
         } 
     checksForWinCol()
@@ -248,12 +264,13 @@ const GameBoard = () => {
 
     console.log('move:', move)
     console.log('Player moves:', tracker)
-    
+    console.log(color)
+
     return(
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <h4 className='sub-header'>{header}</h4>
+                <h4 className='sub-header' style={{color: color}}>{header}</h4>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='background-img' />
                 

@@ -69,15 +69,14 @@ const GameBoard = () => {
             setInput9(null)
         }
 
-
+        // Landing header that changes on game win
         let header = 'Tic-Tac-Toe'
 
-    
         // Starts gameClock
         const startGameClock = () => {
             setInterval(() => {
                 setCount(prevCount => prevCount + 1)
-              }, 1000);
+            }, 1000);
         }
 
         // Array used to store player moves as the game is played
@@ -87,7 +86,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X has won the game'
+                    return header = 'X won!'
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     return header = 'O has won the game'
                 }
@@ -155,7 +154,6 @@ const GameBoard = () => {
 
         // All cells onClick funcs
         const cell1 = () => {
-
             // Starts gameClock if start btn not pressed when players start a round
             count === 0 ? startGameClock() : null
 
@@ -254,7 +252,8 @@ const GameBoard = () => {
     return(
         <div className="gameBoard">
             <div className="header-container">
-                <h1>{header}</h1>
+                <h1>Tic-Tac-Toe</h1>
+                <h4>{header}</h4>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='background-img' />
 

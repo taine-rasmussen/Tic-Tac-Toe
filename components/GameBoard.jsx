@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 
 const GameBoard = () => {
 
     // Cell state used to keep track moves
     const [move, setMove] = useState(null)
-
-    // Used to update game clock
-    const [count, setCount] = useState(0)
-
-    // GameState flips to true on game win 
-    const [gameState, setGameState] = useState(false)
 
     // handles input for cells on player click
     const [input1, setInput1] = useState('')
@@ -33,16 +27,6 @@ const GameBoard = () => {
     const [cellTracker8, setCellTracker8] = useState('empty')
     const [cellTracker9, setCellTracker9] = useState('empty')
 
-
-
-    // THINGS TO COMPLETE FOR MVP
-
-
-
-    // clock to reset on btn reset
-    // clock to stop on game win
-    // Make the draw better - remove window alert and just update header with draw
-
     // Default color for subheader
     let color = '#070F1C'
 
@@ -50,8 +34,6 @@ const GameBoard = () => {
     const toggleColor = () => {
         color = '#FFE3E3'
     }
-
-
 
     // Handles reset btn
     const Reset = () => {
@@ -61,40 +43,14 @@ const GameBoard = () => {
     // Landing header that changes on game win
     let header = 'player has won'
 
-
-        // Starts gameClock
-        const startGameClock = () => {
-            setInterval(() => {
-                setCount(prevCount => prevCount + 1)
-            }, 1000);
-        }
-
-        // Stops gameClock
-       const stopGameClock = () => {
-
-       }
-
-
-       let gameWon = false
-       
-       const onWin = () => {
-           if (gameWon === true){
-               console.log('winnner!!')
-           } else {
-               console.log('still playing')
-           }
-       }
-       
-       onWin()
-
-        // Array used to store player moves as the game is played
-        let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
+    // Array used to store player moves as the game is played
+    let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
 
         // Handles checking current game state to see if any win condition has been met across rows
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!', toggleColor(), gameWon = true
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     return header = 'O won the round!', toggleColor()
                 }
@@ -152,20 +108,11 @@ const GameBoard = () => {
                     return header = 'O won the round!', toggleColor()
             }
         } 
-    checksForWinCol()
-    checksForWinRow()
-    checksForWinDiaganle()
-
-
-
-
+        checksForWinCol(), checksForWinRow(), checksForWinDiaganle()
 
         // All cells onClick funcs
         const cell1 = () => {
-            // Starts gameClock if start btn not pressed when players start a round
-            count === 0 ? startGameClock() : null
-
-            // Handles input of X or Y depending on which players turn it is then changes player turn
+           // Handles input of X or Y depending on which players turn it is then changes player turn & updates tracker
             if (input1 != ''){
                 return null
             }   else {
@@ -177,9 +124,6 @@ const GameBoard = () => {
             }
         }
         const cell2 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input2 != ''){
                 return null
             }   else {
@@ -191,9 +135,6 @@ const GameBoard = () => {
             }
         }
         const cell3 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input3 != ''){
                 return null
             }   else {
@@ -205,9 +146,6 @@ const GameBoard = () => {
             }
         }
         const cell4 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input4 != ''){
                 return null
             }   else {
@@ -219,9 +157,6 @@ const GameBoard = () => {
             }
         }
         const cell5 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input5 != ''){
                 return null
             }   else {
@@ -233,9 +168,6 @@ const GameBoard = () => {
             }
         }
         const cell6 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input6 != ''){
                 return null
             }   else {
@@ -247,9 +179,6 @@ const GameBoard = () => {
             }
         }
         const cell7 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input7 != ''){
                 return null
             }   else {
@@ -261,9 +190,6 @@ const GameBoard = () => {
             }
         }
         const cell8 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input8 != ''){
                 return null
             }   else {
@@ -275,9 +201,6 @@ const GameBoard = () => {
             }
         }
         const cell9 = () => {
-            count === 0 ? startGameClock() : null
-            Draw()
-
             if (input9 != ''){
                 return null
             }   else {
@@ -288,18 +211,6 @@ const GameBoard = () => {
                 }
             }
         }
-
-
-        // Handles a draw - will need to be update to check if win is true else display draw
-        const Draw = () => {
-
-        }
-
-        
-
-    console.log('move:', move)
-    console.log('Player moves:', tracker)
-
 
     return(
         <div className="gameBoard">
@@ -320,10 +231,8 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell8}><h1 className='cell-text'>{input8}</h1></div>
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
-
                 <button onClick={Reset} className='start-btn'>Reset</button>
                 <h4 className='sub-header' style={{color: color}}>{header}</h4>
-
         </div>
     )
 }

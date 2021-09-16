@@ -43,16 +43,6 @@ const GameBoard = () => {
     // clock to stop on game win
     // Make the draw better - remove window alert and just update header with draw
 
-
-
-
-
-
-
-
-
-
-
     // Default color for subheader
     let color = '#FFE3E3'
 
@@ -61,29 +51,13 @@ const GameBoard = () => {
         color = '#070F1C'
     }
 
+    // Handles reset btn
+    const Reset = () => {
+        location.reload();
+    }
 
-
-        // Handles reset btn
-        const Reset = () => {
-            // Resets move counter
-            setMove(null)
-            // Resets cells to null state
-            setInput1(null)
-            setInput2(null)
-            setInput3(null)
-            setInput4(null)
-            setInput5(null)
-            setInput6(null)
-            setInput7(null)
-            setInput8(null)
-            setInput9(null)
-
-            // Resets clock
-
-        }
-
-        // Landing header that changes on game win
-        let header = 'player has won'
+    // Landing header that changes on game win
+    let header = 'player has won'
 
         
 
@@ -332,7 +306,7 @@ const GameBoard = () => {
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
             <button onClick={startGameClock} className='start-btn'>Start</button>
-            {/* <h3 className='game-clock'>{count}</h3> */}
+            <h3 className='game-clock'>{count}</h3>
         </div>
     )
 }

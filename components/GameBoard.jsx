@@ -59,15 +59,17 @@ const GameBoard = () => {
     // Landing header that changes on game win
     let header = 'player has won'
 
-     
+
         // Starts gameClock
         const startGameClock = () => {
-            return timer
+            setInterval(() => {
+                setCount(prevCount => prevCount + 1)
+            }, 1000);
         }
 
         // Stops gameClock
        const stopGameClock = () => {
-           clearInterval(timer)
+            
        }
 
         // Array used to store player moves as the game is played
@@ -77,7 +79,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!', toggleColor(), stopGameClock()
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     return header = 'O won the round!', toggleColor()
                 }

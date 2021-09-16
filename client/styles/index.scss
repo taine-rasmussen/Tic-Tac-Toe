@@ -43,37 +43,39 @@ button:hover{
 }
 
 .sub-header{
-  margin-left: 34.4rem;
-  margin-top: 4rem;
-  margin-bottom: -4rem;
   font-size: 3rem;
   font-style: italic;
   font-weight: bold;
+  margin-left: 3.5rem;
+  margin-top: -2.3rem;
 }
 
 
 
-.reset-btn{
-  margin-left: 77rem;
-  margin-top: -5rem;
-  z-index: 20;
-}
+
+
 .start-btn{
-  margin-left: 77rem;
-  margin-top: -6rem;
   z-index: 20;
+  margin-left: 74rem;
+  margin-top: -1rem;
 }
-.game-clock{
-  margin-top: -1.5rem;
-  margin-left: 5rem;
-}
+
 
 // ---- Header & Start ----
 // ---- Background Img ----
 .bg-img{
   z-index: -1;
   width: 100%;
-  margin-top: -17rem;
+  margin-top: -16rem;
+  transform: scale(1.4);
+
+}
+
+.bg-img2{
+  z-index: -3;
+  margin-top: -50.5rem;
+  width: 100%;
+
 }
 
 // ---- Background Img ----
@@ -99,7 +101,8 @@ button:hover{
   padding: 5px;
   justify-content: center;
   z-index: 1;
-  margin-top: -32.8rem;
+  margin-top: -24.3rem;
+  margin-left: 30rem;
 }
 
 

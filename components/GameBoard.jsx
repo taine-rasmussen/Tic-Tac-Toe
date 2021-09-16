@@ -44,12 +44,14 @@ const GameBoard = () => {
     // Make the draw better - remove window alert and just update header with draw
 
     // Default color for subheader
-    let color = '#FFE3E3'
+    let color = '#070F1C'
 
     // Flips subheader color so its visible on round win
     const toggleColor = () => {
-        color = '#070F1C'
+        color = '#FFE3E3'
     }
+
+
 
     // Handles reset btn
     const Reset = () => {
@@ -69,8 +71,21 @@ const GameBoard = () => {
 
         // Stops gameClock
        const stopGameClock = () => {
-            
+
        }
+
+
+       let gameWon = false
+       
+       const onWin = () => {
+           if (gameWon === true){
+               console.log('winnner!!')
+           } else {
+               console.log('still playing')
+           }
+       }
+       
+       onWin()
 
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
@@ -79,7 +94,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), gameWon = true
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     return header = 'O won the round!', toggleColor()
                 }
@@ -290,9 +305,9 @@ const GameBoard = () => {
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <h4 className='sub-header' style={{color: color}}>{header}</h4>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='background-img' />
+                <img src='/bg.svg' className='bg-img2' alt='background-img' />
                 
             <div className="gameBoard-container">
                 <div className="gameBoard-cell" onClick={cell1}><h1 className='cell-text'>{input1}</h1></div>
@@ -305,9 +320,10 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell8}><h1 className='cell-text'>{input8}</h1></div>
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
-            <button onClick={Reset} className='reset-btn'>Reset</button>
-            <button onClick={startGameClock} className='start-btn'>Start</button>
-            <h3 className='game-clock'>{count}</h3>
+
+                <button onClick={Reset} className='start-btn'>Reset</button>
+                <h4 className='sub-header' style={{color: color}}>{header}</h4>
+
         </div>
     )
 }

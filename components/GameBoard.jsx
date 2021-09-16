@@ -293,9 +293,9 @@ const GameBoard = () => {
                 return null
             }   else {
                 if (move % 2 === 0){
-                    return setInput9('X'), setMove(move + 9), setCellTracker9('X')
+                    return setInput9('X'), setMove(move + 1), setCellTracker9('X')
                 }else {
-                    return setInput9('O'), setMove(move + 9), setCellTracker9('O')
+                    return setInput9('O'), setMove(move + 1), setCellTracker9('O')
                 }
             }
         }
@@ -304,15 +304,16 @@ const GameBoard = () => {
         // Handles a draw - will need to be update to check if win is true else display draw
         const Draw = () => {
 
+            if (gameState === false && move === 9){
+                return header = 'Its a draw!', toggleColor()
+            }
+
+
          // if win state false but move at 9 call draw
             
         }
 
-        // This would return draw on any cell that has a value
-        // Func needs to check that all cells are filled not if single cell has value
-
-        // Further testing on this needs to be done - func will need to know if game state so not to announce draw on last even tho it should be win
-
+        
           
         Draw()
 

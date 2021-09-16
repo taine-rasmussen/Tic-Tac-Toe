@@ -79,7 +79,16 @@ button:hover{
 .bg-img{
   z-index: -1;
   width: 100%;
-  margin-top: -17rem;
+  margin-top: -16rem;
+  transform: scale(1.4);
+
+}
+
+.bg-img2{
+  z-index: -3;
+  margin-top: -50.5rem;
+  width: 100%;
+
 }
 
 // ---- Background Img ----
@@ -105,7 +114,8 @@ button:hover{
   padding: 5px;
   justify-content: center;
   z-index: 1;
-  margin-top: -32.8rem;
+  margin-top: -24.3rem;
+  margin-left: 30rem;
 }
 
 

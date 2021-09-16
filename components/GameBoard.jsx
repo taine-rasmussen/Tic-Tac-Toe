@@ -41,7 +41,6 @@ const GameBoard = () => {
 
     // clock to reset on btn reset
     // clock to stop on game win
-    // Not be able to overwrite move once made
     // Make the draw better - remove window alert and just update header with draw
 
 
@@ -103,62 +102,62 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
                 }
 
                 // Checks center row for win conditions
                 else if (tracker[3] === 'X' && tracker[4] === 'X' && tracker[5] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[3] === 'O' && tracker[4] === 'O' && tracker[5] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
                 }
                 
                 // Checks bottom row for win conditions
                 else if (tracker[6] === 'X' && tracker[7] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[6] === 'O' && tracker[7] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
             }
         }
         // Handles checking current game state to see if any win condition has been met across cols
         const checksForWinCol= () => {
                 // Checks left col for win conditions
                 if (tracker[0] === 'X' && tracker[3] === 'X' && tracker[6] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[0] === 'O' && tracker[3] === 'O' && tracker[6] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
                 }
                 
                 // Checks center col for win conditions
                 else if (tracker[1] === 'X' && tracker[4] === 'X' && tracker[7] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[1] === 'O' && tracker[4] === 'O' && tracker[7] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
                 }
                 
                 // Checks right col for win conditions
                 else if (tracker[2] === 'X' && tracker[5] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[2] === 'O' && tracker[5] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
             }
         }  
         // Handles checking current game state to see if any win condition has been met across diaganles
         const checksForWinDiaganle = () => {
                 // Checks top left to bottom right diaganle win condition
                 if (tracker[0] === 'X' && tracker[4] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[0] === 'O' && tracker[4] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
                 }
                 
                 // Checks bottom left to top right diaganle win condition
                 else if (tracker[2] === 'X' && tracker[4] === 'X' && tracker[6] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), setGameState(true)
                 } else if (tracker[2] === 'O' && tracker[4] === 'O' && tracker[6] === 'O') {
-                    return header = 'O won the round!', toggleColor()
+                    return header = 'O won the round!', toggleColor(), setGameState(true)
             }
         } 
     checksForWinCol()
@@ -174,6 +173,9 @@ const GameBoard = () => {
             // Starts gameClock if start btn not pressed when players start a round
             count === 0 ? startGameClock() : null
 
+            // Checks if game has ended in draw and updates header
+            Draw()
+
             // Handles input of X or Y depending on which players turn it is then changes player turn
             if (input1 != ''){
                 return null
@@ -187,6 +189,7 @@ const GameBoard = () => {
         }
         const cell2 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input2 != ''){
                 return null
@@ -200,6 +203,7 @@ const GameBoard = () => {
         }
         const cell3 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input3 != ''){
                 return null
@@ -213,6 +217,7 @@ const GameBoard = () => {
         }
         const cell4 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input4 != ''){
                 return null
@@ -226,6 +231,7 @@ const GameBoard = () => {
         }
         const cell5 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input5 != ''){
                 return null
@@ -239,6 +245,7 @@ const GameBoard = () => {
         }
         const cell6 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input6 != ''){
                 return null
@@ -252,6 +259,7 @@ const GameBoard = () => {
         }
         const cell7 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input7 != ''){
                 return null
@@ -265,6 +273,7 @@ const GameBoard = () => {
         }
         const cell8 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input8 != ''){
                 return null
@@ -278,6 +287,7 @@ const GameBoard = () => {
         }
         const cell9 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input9 != ''){
                 return null
@@ -293,10 +303,17 @@ const GameBoard = () => {
 
         // Handles a draw - will need to be update to check if win is true else display draw
         const Draw = () => {
-            if (move > 9){
-                window.alert('ITS A DRAW')
-            }
+
+         // if win state false but move at 9 call draw
+            
         }
+
+        // This would return draw on any cell that has a value
+        // Func needs to check that all cells are filled not if single cell has value
+
+        // Further testing on this needs to be done - func will need to know if game state so not to announce draw on last even tho it should be win
+
+          
         Draw()
 
     console.log('move:', move)

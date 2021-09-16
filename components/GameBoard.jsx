@@ -85,6 +85,8 @@ const GameBoard = () => {
         // Landing header that changes on game win
         let header = 'player has won'
 
+        
+
         // Starts gameClock
         const startGameClock = () => {
             setInterval(() => {
@@ -102,62 +104,62 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
                 }
 
                 // Checks center row for win conditions
                 else if (tracker[3] === 'X' && tracker[4] === 'X' && tracker[5] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[3] === 'O' && tracker[4] === 'O' && tracker[5] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks bottom row for win conditions
                 else if (tracker[6] === 'X' && tracker[7] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[6] === 'O' && tracker[7] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
             }
         }
         // Handles checking current game state to see if any win condition has been met across cols
         const checksForWinCol= () => {
                 // Checks left col for win conditions
                 if (tracker[0] === 'X' && tracker[3] === 'X' && tracker[6] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[3] === 'O' && tracker[6] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks center col for win conditions
                 else if (tracker[1] === 'X' && tracker[4] === 'X' && tracker[7] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[1] === 'O' && tracker[4] === 'O' && tracker[7] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks right col for win conditions
                 else if (tracker[2] === 'X' && tracker[5] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[2] === 'O' && tracker[5] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
             }
         }  
         // Handles checking current game state to see if any win condition has been met across diaganles
         const checksForWinDiaganle = () => {
                 // Checks top left to bottom right diaganle win condition
                 if (tracker[0] === 'X' && tracker[4] === 'X' && tracker[8] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[0] === 'O' && tracker[4] === 'O' && tracker[8] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
                 }
                 
                 // Checks bottom left to top right diaganle win condition
                 else if (tracker[2] === 'X' && tracker[4] === 'X' && tracker[6] === 'X'){
-                    return header = 'X won the round!', toggleColor(), setGameState(true)
+                    return header = 'X won the round!', toggleColor()
                 } else if (tracker[2] === 'O' && tracker[4] === 'O' && tracker[6] === 'O') {
-                    return header = 'O won the round!', toggleColor(), setGameState(true)
+                    return header = 'O won the round!', toggleColor()
             }
         } 
     checksForWinCol()
@@ -172,9 +174,6 @@ const GameBoard = () => {
         const cell1 = () => {
             // Starts gameClock if start btn not pressed when players start a round
             count === 0 ? startGameClock() : null
-
-            // Checks if game has ended in draw and updates header
-            Draw()
 
             // Handles input of X or Y depending on which players turn it is then changes player turn
             if (input1 != ''){
@@ -304,22 +303,13 @@ const GameBoard = () => {
         // Handles a draw - will need to be update to check if win is true else display draw
         const Draw = () => {
 
-            if (gameState === false && move === 9){
-                return header = 'Its a draw!', toggleColor()
-            }
-
-
-         // if win state false but move at 9 call draw
-            
         }
 
         
-          
-        Draw()
 
     console.log('move:', move)
     console.log('Player moves:', tracker)
-    console.log(color)
+
 
     return(
         <div className="gameBoard">
@@ -342,7 +332,7 @@ const GameBoard = () => {
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
             <button onClick={startGameClock} className='start-btn'>Start</button>
-            <h3 className='game-clock'>{count}</h3>
+            {/* <h3 className='game-clock'>{count}</h3> */}
         </div>
     )
 }

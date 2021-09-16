@@ -44,12 +44,14 @@ const GameBoard = () => {
     // Make the draw better - remove window alert and just update header with draw
 
     // Default color for subheader
-    let color = '#FFE3E3'
+    let color = '#070F1C'
 
     // Flips subheader color so its visible on round win
     const toggleColor = () => {
-        color = '#070F1C'
+        color = '#FFE3E3'
     }
+
+
 
     // Handles reset btn
     const Reset = () => {
@@ -303,7 +305,6 @@ const GameBoard = () => {
         <div className="gameBoard">
             <div className="header-container">
                 <h1>Tic-Tac-Toe</h1>
-                <h4 className='sub-header' style={{color: color}}>{header}</h4>
             </div>
                 <img src='/tic-tac-toe-bg.svg' className='bg-img' alt='background-img' />
                 <img src='/bg.svg' className='bg-img2' alt='background-img' />
@@ -321,6 +322,7 @@ const GameBoard = () => {
             </div>
 
                 <button onClick={Reset} className='start-btn'>Reset</button>
+                <h4 className='sub-header' style={{color: color}}>{header}</h4>
 
         </div>
     )

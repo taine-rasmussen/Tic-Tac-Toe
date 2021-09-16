@@ -69,8 +69,21 @@ const GameBoard = () => {
 
         // Stops gameClock
        const stopGameClock = () => {
-            
+
        }
+
+
+       let gameWon = false
+       
+       const onWin = () => {
+           if (gameWon === true){
+               console.log('winnner!!')
+           } else {
+               console.log('still playing')
+           }
+       }
+       
+       onWin()
 
         // Array used to store player moves as the game is played
         let tracker = [cellTracker1, cellTracker2, cellTracker3, cellTracker4, cellTracker5, cellTracker6, cellTracker7, cellTracker8, cellTracker9]
@@ -79,7 +92,7 @@ const GameBoard = () => {
         const checksForWinRow= () => {
                 // Checks top row for win conditions
                 if (tracker[0] === 'X' && tracker[1] === 'X' && tracker[2] === 'X'){
-                    return header = 'X won the round!', toggleColor()
+                    return header = 'X won the round!', toggleColor(), gameWon = true
                 } else if (tracker[0] === 'O' && tracker[1] === 'O' && tracker[2] === 'O') {
                     return header = 'O won the round!', toggleColor()
                 }
@@ -307,7 +320,6 @@ const GameBoard = () => {
             </div>
             <button onClick={Reset} className='reset-btn'>Reset</button>
             <button onClick={startGameClock} className='start-btn'>Start</button>
-            <h3 className='game-clock'>{count}</h3>
         </div>
     )
 }

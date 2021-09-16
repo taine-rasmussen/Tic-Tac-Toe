@@ -41,18 +41,7 @@ const GameBoard = () => {
 
     // clock to reset on btn reset
     // clock to stop on game win
-    // Not be able to overwrite move once made
     // Make the draw better - remove window alert and just update header with draw
-
-
-
-
-
-
-
-
-
-
 
     // Default color for subheader
     let color = '#FFE3E3'
@@ -62,29 +51,15 @@ const GameBoard = () => {
         color = '#070F1C'
     }
 
+    // Handles reset btn
+    const Reset = () => {
+        location.reload();
+    }
 
+    // Landing header that changes on game win
+    let header = 'player has won'
 
-        // Handles reset btn
-        const Reset = () => {
-            // Resets move counter
-            setMove(null)
-            // Resets cells to null state
-            setInput1(null)
-            setInput2(null)
-            setInput3(null)
-            setInput4(null)
-            setInput5(null)
-            setInput6(null)
-            setInput7(null)
-            setInput8(null)
-            setInput9(null)
-
-            // Resets clock
-
-        }
-
-        // Landing header that changes on game win
-        let header = 'player has won'
+        
 
         // Starts gameClock
         const startGameClock = () => {
@@ -187,6 +162,7 @@ const GameBoard = () => {
         }
         const cell2 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input2 != ''){
                 return null
@@ -200,6 +176,7 @@ const GameBoard = () => {
         }
         const cell3 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input3 != ''){
                 return null
@@ -213,6 +190,7 @@ const GameBoard = () => {
         }
         const cell4 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input4 != ''){
                 return null
@@ -226,6 +204,7 @@ const GameBoard = () => {
         }
         const cell5 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input5 != ''){
                 return null
@@ -239,6 +218,7 @@ const GameBoard = () => {
         }
         const cell6 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input6 != ''){
                 return null
@@ -252,6 +232,7 @@ const GameBoard = () => {
         }
         const cell7 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input7 != ''){
                 return null
@@ -265,6 +246,7 @@ const GameBoard = () => {
         }
         const cell8 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input8 != ''){
                 return null
@@ -278,14 +260,15 @@ const GameBoard = () => {
         }
         const cell9 = () => {
             count === 0 ? startGameClock() : null
+            Draw()
 
             if (input9 != ''){
                 return null
             }   else {
                 if (move % 2 === 0){
-                    return setInput9('X'), setMove(move + 9), setCellTracker9('X')
+                    return setInput9('X'), setMove(move + 1), setCellTracker9('X')
                 }else {
-                    return setInput9('O'), setMove(move + 9), setCellTracker9('O')
+                    return setInput9('O'), setMove(move + 1), setCellTracker9('O')
                 }
             }
         }
@@ -293,15 +276,14 @@ const GameBoard = () => {
 
         // Handles a draw - will need to be update to check if win is true else display draw
         const Draw = () => {
-            if (move > 9){
-                window.alert('ITS A DRAW')
-            }
+
         }
-        Draw()
+
+        
 
     console.log('move:', move)
     console.log('Player moves:', tracker)
-    console.log(color)
+
 
     return(
         <div className="gameBoard">

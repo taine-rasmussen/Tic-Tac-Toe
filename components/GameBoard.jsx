@@ -318,8 +318,10 @@ const GameBoard = () => {
                 <div className="gameBoard-cell" onClick={cell8}><h1 className='cell-text'>{input8}</h1></div>
                 <div className="gameBoard-cell" onClick={cell9}><h1 className='cell-text'>{input9}</h1></div>
             </div>
-            <button onClick={Reset} className='reset-btn'>Reset</button>
-            <button onClick={startGameClock} className='start-btn'>Start</button>
+            <div className="game-btns-container">
+                <button onClick={Reset} className='reset-btn'>Reset</button>
+                <button onClick={startGameClock} className='start-btn'>Start</button>
+            </div>
         </div>
     )
 }
